@@ -21,39 +21,30 @@ A lightweight Bash script to monitor local SSL certificates, log their status, a
    ```bash
    git clone https://github.com
    cd ssl-cert-checker
-Используйте код с осторожностью.
 
 Configure the directory:
-By default, the script looks for certificates in /root/test/cert/certs/cert/.
-Recommendation: Change CERT_DIR in the script to /opt/ssl-monitor/certs/ for better accessibility.
+Certificates CERT_DIR in the script to /opt/ssl-monitor/certs/
+
 Setup Config:
 Create a config/config.conf file:
 bash
 mkdir config
 nano config/config.conf
-Используйте код с осторожностью.
 
 Add your Telegram credentials:
 bash
 TELEGRAM_TOKEN="your_bot_token_here"
 TELEGRAM_CHAT_ID="your_chat_id_here"
-Используйте код с осторожностью.
 
-Set Permissions:
-bash
-chmod +x check_certs.sh
-Используйте код с осторожностью.
 
 Usage
 Run the script manually:
 bash
 ./check_certs.sh
-Используйте код с осторожностью.
 
 Automation (Cron)
 To check certificates daily at 09:00 AM, add this to your crontab -e:
 cron
 0 9 * * * /path/to/your/check_certs.sh
-Используйте код с осторожностью.
 
 
