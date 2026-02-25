@@ -56,21 +56,4 @@ cron
 0 9 * * * /path/to/your/check_certs.sh
 Используйте код с осторожностью.
 
-Thresholds
-Warning (TW): Triggers if less than 30 days remain.
-Critical (TC): Triggers if the certificate is already expired (0 days).
-Logging
-All activities are logged to:
-/var/log/check_cert.log (Ensure the user running the script has write permissions to this file).
-License
-This project is licensed under the MIT License.
 
----
-
-### Пара советов по каталогу:
-1.  **Каталог `/root/`**: Это "закрытая" зона. Если ты выкладываешь скрипт для других, лучше в коде изменить путь на что-то вроде:
-    `CERT_DIR="/etc/ssl/certs"` (стандарт в Linux) или 
-    `CERT_DIR="$(dirname "$0")/certs"` (папка `certs` рядом со скриптом).
-2.  **Название репозитория**: Назови его **`ssl-cert-monitor-bash`**.
-
-Нужно ли мне подготовить файл **`.gitignore`**, чтобы ты случайно не выложил сво
